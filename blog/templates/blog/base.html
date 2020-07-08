@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <title>Techy Blogs</title>
+        <link rel="icon" href="{% static 'images/pencil.png' %}" type="image/icon type">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -25,11 +26,12 @@
 
             
             .footer { 
-                position:relative; 
+                position:fixed; 
                 left: 0 ; right: 0; bottom: 0; 
                 background-color: #32a8a6;
                 text-align: center;
-                padding-bottom: 0px; 
+                padding-bottom: 0px;
+                 
             }
         </style>
 
@@ -71,6 +73,9 @@
                                 <a class="nav-link" href="{% url 'signup' %}">SignUp</a>
                             </li>
                         {% endif %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'aboutusx' %}">AboutUs</a>
+                            </li>
                     </ul>
                     </div>
                 </nav>
@@ -91,9 +96,6 @@
         
             <div class="footer container-fluid">
                 <h6> &#169; Mayuresh R. Dindorkar</h6>
-                <h6> Email : dmayuresh99@gmail.com</h6>
-                <h6> Mob.  : 9423838280</h6>
             </div>
-        
     </body>
 </html>

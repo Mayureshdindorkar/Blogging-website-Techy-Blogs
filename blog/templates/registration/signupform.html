@@ -3,7 +3,7 @@
 
 {% block content %}
     <form method="POST" action="{% url 'signup' %}" class="justify-content-center container">
-        <h2 style="text-decoration:underline;">Sign Up</h2>
+        <h2>SignUp</h2>
         <br>
         {% csrf_token %}
         {{ form|crispy }}

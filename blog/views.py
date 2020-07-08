@@ -101,4 +101,5 @@ def comment_remove(request, pk):
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
 
-
+def aboutus(request):
+    return render(request,'blog/aboutus.html')
