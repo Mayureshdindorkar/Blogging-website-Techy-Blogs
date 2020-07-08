@@ -2,12 +2,12 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h2 style="text-decoration:underline;margin-left:325px;">Sign Up</h2>
-    <form method="POST" action="{% url 'signup' %}" class="container" style="margin-left:10%;margin-top:2%;width:600px;">
-    
+    <form method="POST" action="{% url 'signup' %}" class="justify-content-center container">
+        <h2 style="text-decoration:underline;">Sign Up</h2>
+        <br>
         {% csrf_token %}
             {{ form|crispy }}
-            <input type="submit" class="btn btn-default" value="SignUp"  style="margin-left:230px;">
+            <input type="submit" class="save btn btn-secondary" value="SignUp">
     
     </form>
 

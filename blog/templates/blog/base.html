@@ -1,36 +1,81 @@
 {% load static %}
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <title>Techy Blogs</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}" type="text/css">
+
+        <style>
+            
+            .navbar-custom { 
+                background-color: #0f6361; 
+            } 
+         
+            .navbar-custom .nav-link { 
+                color: floralwhite; 
+            } 
+        </style>
+
     </head>
     <body>
-        <div class="page-header" style="background-color:#32a8a6;">
-            <ol>
-                {% if user.is_authenticated %}
-                
-                    <p class="top-menu">Welcome "{{ user.username }}"&nbsp&nbsp&nbsp&nbsp<a href="{% url 'logout' %}"><input class="btn btn-default" value="Logout" style="width: 100px;"></a></p>
-                    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-                    <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+            <div style="background-color:#32a8a6;">
+                <div class="container-fluid" style="padding-top: 20px;">
+                    <h1><a style="color:floralwhite;" href="/">Techy Blogs</a></h1>        
+                </div>
+                <br>
+                <nav class="navbar navbar-custom navbar-expand-lg container-fluid navbar-dark">
                     
-                {% else %}
-                    <a href="{% url 'signup' %}" class="top-menu">SignUp</a>        
-                    <a href="{% url 'login' %}" class="top-menu">Login</a>
-                {% endif %}
-                <h1 style="text-decoration: underline;"><a href="/">Techy Blogs</a></h1>
-            </ol>
-        </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
 
-        <div class="content container" style="margin-left:25%;">
+                        <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        
+                        {% if user.is_authenticated %}    
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'post_new' %}">New Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'signup' %}">SignUp</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    </div>
+                </nav>
+            </div>
+        <br>
+
+        <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="mx-auto">
                 {% block content %}
                 {% endblock %}
                 </div>
             </div>
         </div>
+        
     </body>
 </html>
