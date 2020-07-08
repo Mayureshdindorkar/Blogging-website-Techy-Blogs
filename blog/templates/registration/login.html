@@ -5,7 +5,7 @@
         <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
 
-    <div style="margin-top: 70px;">
+    <div style="margin-top: 50px;" class="container">
         <form method="post" action="{% url 'login' %}" class="justify-content-center">
             
             <h2><b>Login</b></h2>
@@ -25,7 +25,8 @@
                 <input type="submit" class="save btn btn-secondary" value="Login">
                 <input type="hidden" name="next" value="{{ next }}" />
             </div>
-
         </form>
+        <br>
+        <br>
     </div>
 {% endblock %}

@@ -6,9 +6,9 @@
         <h2 style="text-decoration:underline;">Sign Up</h2>
         <br>
         {% csrf_token %}
-            {{ form|crispy }}
-            <input type="submit" class="save btn btn-secondary" value="SignUp">
-    
+        {{ form|crispy }}
+        <input type="submit" class="save btn btn-secondary" value="SignUp">
     </form>
-
+    <br>
+    <br>
 {% endblock %}
