@@ -1,4 +1,4 @@
-# my-first-blog
+# Blogging Website
 
 1)	python -m venv myvenv
 2)	>Myvenv\Scripts\activate
