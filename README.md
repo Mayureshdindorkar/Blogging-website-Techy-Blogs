@@ -24,6 +24,7 @@
 
 Username - mayuresh                            password - 123
 
-# Tech Stack:
+# Tech Stack
 Backend: Python Django 2.2
+
 UI: HTML5, CSS, Bootstrap4
