@@ -1,5 +1,7 @@
 # Blogging Website
 
+Live Website: http://dmayuresh99.pythonanywhere.com/
+
 1)	python -m venv myvenv
 2)	>Myvenv\Scripts\activate
 3)	(myvenv)> python -m pip install --upgrade pip
@@ -28,5 +30,3 @@ Username - mayuresh                            password - 123
 Backend: Python Django 2.2
 
 UI: HTML5, CSS, Bootstrap4
-
-Live Website: http://dmayuresh99.pythonanywhere.com/
